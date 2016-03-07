@@ -27,17 +27,14 @@ main.controller('mainCtrl', function($scope, $http, apiService) {
         game = game.join('%20');
         console.log(game);
         apiService.apiSelect(game).success(function(data) {
-            console.log(data);
+            console.log(data['streams'][0]['channel']['name']);
+            $('#first').attr('src', "http://player.twitch.tv/?channel="+data['streams'][0]['channel']['name']);
+            $('#second').attr('src', "http://player.twitch.tv/?channel="+data['streams'][1]['channel']['name']);
+            $('#third').attr('src', "http://player.twitch.tv/?channel="+data['streams'][2]['channel']['name']);
+            $('#fourth').attr('src', "http://player.twitch.tv/?channel="+data['streams'][3]['channel']['name']);
         }).catch(function(err) {
             console.error(err);
         });
     };
 });
 
-// main.controller('mainCtrl', function($scope, $http, apiService) {
-//   $scope.getData = function(){
-//     // pass the $http to the factory
-//     $http.get("https://api.twitch.tv/kraken/streams")
-//     .success(function(response) {console.log(response.streams);});
-//   };
-// });
