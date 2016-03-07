@@ -28,10 +28,10 @@ main.controller('mainCtrl', function($scope, $http, apiService) {
         console.log(game);
         apiService.apiSelect(game).success(function(data) {
             console.log(data['streams'][0]['channel']['name']);
-            $('#first').attr('src', "http://player.twitch.tv/?channel="+data['streams'][0]['channel']['name']);
-            $('#second').attr('src', "http://player.twitch.tv/?channel="+data['streams'][1]['channel']['name']);
-            $('#third').attr('src', "http://player.twitch.tv/?channel="+data['streams'][2]['channel']['name']);
-            $('#fourth').attr('src', "http://player.twitch.tv/?channel="+data['streams'][3]['channel']['name']);
+            $('#0').attr('src', "http://www.twitch.tv/"+data['streams'][0]['channel']['name']+'/embed');
+            $('#1').attr('src', "http://www.twitch.tv/"+data['streams'][1]['channel']['name']+'/embed');
+            $('#2').attr('src', "http://www.twitch.tv/"+data['streams'][2]['channel']['name']+'/embed');
+            $('#3').attr('src', "http://www.twitch.tv/"+data['streams'][3]['channel']['name']+'/embed');
         }).catch(function(err) {
             console.error(err);
         });
