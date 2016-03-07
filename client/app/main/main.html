@@ -1,6 +1,14 @@
 <div class="container">
   <h1>Hello World</h1>
-  <button ng-controller='mainCtrl' ng-click='getData()'>button</button>
+  <button ng-controller='mainCtrl' ng-click='searchData()'>button</button>
+  <form>
+    <input type="text" placeholder="Search" ng-model='query'ng-keyup='searchData(query)'></input>
+  </form>
+  <ul>
+    <li ng-repeat="x in games | unique: 'game'" ng-click='getData(x.game)'>
+      {{x.game}}
+    </li>
+  </ul>
 
 </ul>
 </div>

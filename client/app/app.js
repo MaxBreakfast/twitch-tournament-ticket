@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router', 'ticket.services','ticket.main']);
+var app = angular.module('app', ['ui.router', 'ticket.services','ticket.main', 'angular.filter']);
 
 app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/main');

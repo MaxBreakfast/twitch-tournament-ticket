@@ -8,7 +8,9 @@ module.exports = function(grunt) {
             lib: {
                 src: ['client/lib/angular/angular.js',
                     'client/lib/angular-ui-router/release/angular-ui-router.js',
-                    'client/lib/jquery/dist/jquery.js'
+                    'client/lib/jquery/dist/jquery.js',
+                    'client/lib/angular-filter/dist/angular-filter.js'
+
 
                 ],
                 dest: 'client/dist/lib.js'
