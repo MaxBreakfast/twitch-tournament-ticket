@@ -20,8 +20,14 @@ main.controller('mainCtrl', function($scope, $http, apiService) {
             });
         // pass the $http to the factory
     };
+    $scope.mute = function(){
+        $('#1').mute();
+    };
 
     $scope.getData = function(game) {
+        $scope.games = [];
+        $scope.results = [];
+        $scope.query = '';
 
         game = game.split(' ');
         game = game.join('%20');

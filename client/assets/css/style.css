@@ -1,0 +1,32 @@
+.overlay-content{
+    position:absolute;
+    margin:0 auto;
+    font-weight:300;
+    background-color: white;
+}
+.result-container {
+  position:relative;
+  background-color: white;
+  border-bottom: 1px solid #343447;
+  display:block;
+  min-height:80px;
+}
+.result-container .small-artwork {left:40px; width:40px; height:40px;}
+.result-container .result-info {left:100px; width:50%;}
+
+.result-container .add-button {
+  position: absolute;
+  right: 0;
+  color: #fff;
+  top: 20px;
+  width: 38px;
+  height: 38px;
+  width:60px;
+  text-decoration:none;
+  text-align: center;
+  line-height: 38px;
+  vertical-align: middle;
+  text-transform:uppercase;
+  font-size:0.8em;
+  font-family: "Montserrat Black";
+}
