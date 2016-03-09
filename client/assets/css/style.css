@@ -1,18 +1,11 @@
-h1 {
-    margin-top: 0px;
-}
 html {
-    min-height: 100% !important;
     height: auto;
-    /* make sure it is at least as tall as the viewport */
-    width: 100%;
-    position: relative;
+    width: auto;
 }
 
 body {
     height: auto;
-    /* force the BODY element to match the height of the HTML element */
-    width: 100%;
+    width: auto;
 }
 
 #header {
@@ -78,8 +71,6 @@ body {
     position: relative;
 }
 
-
-
 .vids-container= {
     height: auto;
     width: auto;
@@ -90,8 +81,6 @@ body {
     height: 80%;
     width: 49%;
 }
-
-
 
 
 /* Wrapper for page content to push down footer */
@@ -107,12 +96,9 @@ body {
 
 /* Set the fixed height of the footer here */
 
-#push,
 #footer {
+    margin-top: 280px];
     height: 60px;
-}
-
-#footer {
     background-color: #f5f5f5;
 }
 
@@ -126,25 +112,4 @@ body {
         padding-left: 20px;
         padding-right: 20px;
     }
-}
-
-
-/* Custom page CSS
-      -------------------------------------------------- */
-
-
-/* Not required for template or sticky footer method. */
-
-.container {
-    width: auto;
-    height: auto;
-}
-
-.container .credit {
-    margin: 20px 0;
-}
-
-.page-header {
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
