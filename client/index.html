@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html ng-app="app">
+
 <head>
-<meta charset="utf-8" />
-  <title>Tournament Ticket</title>
-  <script type="text/javascript" src="./dist/lib.js"></script>
-  <script type="text/javascript" src="./dist/src.js"></script>
-  <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <meta charset="utf-8" />
+    <title>Tournament Ticket</title>
+    <!-- <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script> -->
+    <script type="text/javascript" src="./dist/lib.js"></script>
+    <script type="text/javascript" src="./dist/src.js"></script>
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="./lib/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
+
 <body>
-<script>
-</script>
-<div>test</div>
-<div ui-view>
-  
-</div>
+    <!--     <div id="wrap" class="container">
+        <div class='page-header text-center'>
+            <img id='header-image' src="./assets/images/GlitchIcon_PurpleonWhite.png">
+            <h1 id='header'>Twitch Tournament Ticket</h1>
+        </div>
+        <div ui-view>
+        </div>
+        <div id="footer">
+        <div class="container">
+          <p class="muted credit">footer</p>
+        </div>
+
+        </div>
+    </div> -->
+
+    <body>
+        <!-- Part 1: Wrap all page content here -->
+        <div id="wrap">
+            <!-- Begin page content -->
+            <div class="container">
+                <div class="page-header text-center">
+                    <h1 id="header">Twitch Tournament Ticket</h1>
+                </div>
+                <div ui-view class='centered'>
+                </div>
+            </div>
+            <!-- <div id="push"></div> -->
+        </div>
+        <div id="footer">
+            <div class="container">
+                <p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+            </div>
+        </div>
+    </body>
 </body>
+
 </html>

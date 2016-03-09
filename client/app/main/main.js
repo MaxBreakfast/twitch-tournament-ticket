@@ -13,6 +13,13 @@ main.controller('mainCtrl', function($scope, $http, apiService) {
         }
         apiService.apiSearch(q).success(function(data) {
                 $scope.games = data.channels;
+                $scope.games.forEach(function(ind){
+                   var icon = ind.game;
+                   icon = icon.split(' ');
+                   icon = icon.join('%20');
+                   icon+='-272x380.jpg';
+                   ind.ico = icon; 
+                });
                 console.log($scope.games);
             })
             .catch(function(err) {
@@ -20,27 +27,30 @@ main.controller('mainCtrl', function($scope, $http, apiService) {
             });
         // pass the $http to the factory
     };
-    $scope.mute = function(){
+    $scope.mute = function() {
         $('#1').mute();
     };
 
-    $scope.getData = function(game) {
+    $scope.clearData = function() {
         $scope.games = [];
         $scope.results = [];
         $scope.query = '';
+    };
+
+    $scope.getData = function(game) {
+        $scope.clearData();
 
         game = game.split(' ');
         game = game.join('%20');
         console.log(game);
         apiService.apiSelect(game).success(function(data) {
             console.log(data['streams'][0]['channel']['name']);
-            $('#0').attr('src', "http://www.twitch.tv/"+data['streams'][0]['channel']['name']+'/embed');
-            $('#1').attr('src', "http://www.twitch.tv/"+data['streams'][1]['channel']['name']+'/embed');
-            $('#2').attr('src', "http://www.twitch.tv/"+data['streams'][2]['channel']['name']+'/embed');
-            $('#3').attr('src', "http://www.twitch.tv/"+data['streams'][3]['channel']['name']+'/embed');
+            $('#0').attr('src', "http://www.twitch.tv/" + data['streams'][0]['channel']['name'] + '/embed');
+            $('#1').attr('src', "http://www.twitch.tv/" + data['streams'][1]['channel']['name'] + '/embed');
+            $('#2').attr('src', "http://www.twitch.tv/" + data['streams'][2]['channel']['name'] + '/embed');
+            $('#3').attr('src', "http://www.twitch.tv/" + data['streams'][3]['channel']['name'] + '/embed');
         }).catch(function(err) {
             console.error(err);
         });
     };
 });
-

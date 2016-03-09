@@ -1,30 +1,31 @@
-<div class="container">
-    <h1>Hello World</h1>
-
-    <form>
-        <input type="text" placeholder="Search" ng-model='query' ng-keyup='searchData(query)'></input>
-    </form>
-    <div class="overlay-content">
-        <div class='result-containter' ng-show="query!== ''" ng-repeat="x in games | unique: 'game'" ng-click='getData(x.game)'>
-            <div class='result-info'>
-              <div>
-                {{x.game}}
-              </div>
+<div>
+    <div id="overlay-source-search" class="overlay">
+        <form>
+            <input type="text" placeholder="Search" ng-model='query' ng-keyup='searchData(query)'></input>
+        </form>
+        <div class="overlay-content">
+            <div class='result-containter' ng-show="query!== ''" ng-repeat="x in games | unique: 'game'" ng-click='getData(x.game)'>
+                <img class="small-artwork" src="http://static-cdn.jtvnw.net/ttv-boxart/{{x.ico}}" height='100'>
+                <div class='result-info'>
+                    <div>
+                        {{x.game}}
+                    </div>
+                </div>
             </div>
-        </div>
-        <!--   <ul>
+            <!--   <ul>
     <li ng-repeat="x in games | unique: 'game'" ng-click='getData(x.game)'>
       {{x.game}}
     </li>
   </ul> -->
+        </div>
     </div>
-    <iframe id='0' src="http://www.twitch.tv/kinggothalion/embed" frameborder="0" scrolling="no" height="378" width="620" allowFullscreen></iframe>
-
-    <iframe id='1' src="http://www.twitch.tv/kinggothalion/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe>
-    <iframe id='2' src="http://www.twitch.tv/kinggothalion/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe>
-    <iframe id='3' src="http://www.twitch.tv/kinggothalion/embed" frameborder="0" scrolling="no" height="378" width="620" volume=0></iframe>
-    <!-- <iframe id='second' src="http://player.twitch.tv/?channel=kinggothalion" allowfullscreen autoplay=true></iframe> -->
+    <div class='vids-container'>
+        <iframe id='0' class='vids' src="http://www.twitch.tv/anis13000/embed" frameborder="0" scrolling="no"></iframe>
+        <iframe id='1' class='vids' src="http://www.twitch.tv/anis13000/embed" frameborder="0" scrolling="no"></iframe>
+        <iframe id='2' class='vids' src="http://www.twitch.tv/anis13000/embed" frameborder="0" scrolling="no"></iframe>
+        <iframe id='3' class='vids' src="http://www.twitch.tv/anis13000/embed" frameborder="0" scrolling="no"></iframe>
+    </div>
+</div>
+<!-- <iframe id='second' src="http://player.twitch.tv/?channel=kinggothalion" allowfullscreen autoplay=true></iframe> -->
 <!-- <iframe id='third' src="http://player.twitch.tv/?channel=kinggothalion" allowfullscreen autoplay=true></iframe> -->
 <!-- <iframe id='fourth' src="http://player.twitch.tv/?channel=kinggothalion" allowfullscreen autoplay=0 muted=0></iframe> -->
-    </ul>
-</div>
