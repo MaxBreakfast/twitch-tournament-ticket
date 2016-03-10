@@ -6,16 +6,26 @@ module.exports = function(grunt) {
                 dest: 'client/dist/src.js'
             },
             lib: {
-                src: ['client/lib/angular/angular.js',
-                    'client/lib/angular-ui-router/release/angular-ui-router.js',
-                    'client/lib/jquery/dist/jquery.js',
-                    'client/lib/angular-filter/dist/angular-filter.js'
+                src: ['client/lib/angular/angular.min.js',
+                    'client/lib/angular-ui-router/release/angular-ui-router.min.js',
+                    'client/lib/jquery/dist/jquery.min.js',
+                    'client/lib/angular-filter/dist/angular-filter.min.js'
 
 
                 ],
                 dest: 'client/dist/lib.js'
             }
 
+        },
+        uglify: { // Minify .js files
+            options: {
+                mangle: false
+            },
+            js_files: {
+                files: {
+                    'client/dist/src.min.js': ['client/dist/src.js']
+                }
+            }
         },
         watch: {
             scripts: {
@@ -32,6 +42,8 @@ module.exports = function(grunt) {
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-nodemon');
 
     grunt.registerTask('server-dev', function(target) {
@@ -49,5 +61,7 @@ module.exports = function(grunt) {
 
 
     grunt.registerTask('conc', ['concat']);
+
+    grunt.registerTask('build', ['concat', 'uglify']);
 
 };

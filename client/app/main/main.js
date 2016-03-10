@@ -14,18 +14,24 @@ main.controller('mainCtrl', function($scope, $http, apiService, $document) {
             return;
         }
         apiService.apiSearch(q).success(function(data) {
-            console.log(data.channels);
-                var info =  data.channels;
-                info.filter(function(ind){
-                    return !!ind.game;
-                }).forEach(function(ind) {
+                var info = data.channels;
+                info = info.filter(function(ind) {
+                    if (ind.game !== null) {
+
+                        return ind;
+                    }
+                });
+                $scope.games = info;
+                console.log($scope.games);
+                $scope.games.map(function(ind) {
                     var icon = ind.game;
                     icon = icon.split(' ');
                     icon = icon.join('%20');
                     icon += '-272x380.jpg';
                     ind.ico = icon;
                 });
-            $scope.games = info;
+
+
             })
             .catch(function(err) {
                 console.error(err);
@@ -47,14 +53,14 @@ main.controller('mainCtrl', function($scope, $http, apiService, $document) {
         console.log(game);
         apiService.apiSelect(game).success(function(data) {
             for (var i = 0; i < 4; i++) {
-                var ind = '#'+i;
+                var ind = '#' + i;
                 $(ind).attr('src', "http://www.twitch.tv/" + data['streams'][i]['channel']['name'] + '/embed');
             }
         }).catch(function(err) {
             console.error(err);
         });
     };
-    $document.ready(function(){
-        $scope.getData('bloodborne');
+    $document.ready(function() {
+        $scope.getData('league%20of%20legends');
     });
 });

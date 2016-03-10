@@ -4,7 +4,7 @@
             <input type="text" placeholder="Search" ng-model='query' ng-keyup='searchData(query)'></input>
         </form>
         <div class="overlay-content centered">
-            <div class='result-container' ng-show="query!== ''" ng-repeat="x in games | limitTo: 3" ng-click='getData(x.game)'>
+            <div class='result-container' ng-show="query!== ''" ng-repeat="x in games | unique: 'game' | limitTo: 3" ng-click='getData(x.game)'>
                 <img class="small-artwork" src="http://static-cdn.jtvnw.net/ttv-boxart/{{x.ico}}" height='100'>
                 <div class='result-info'>
                     <div>
