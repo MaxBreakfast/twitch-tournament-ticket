@@ -2,6 +2,10 @@
     "name": "twitch-tournament-ticket",
     "version": "1.0.0",
     "description": "",
+    "engines": {
+        "node": "4.2.2",
+        "npm": "2.13.2"
+    },
     "main": "server/server.js",
     "scripts": {
         "start": "node server/server.js",
