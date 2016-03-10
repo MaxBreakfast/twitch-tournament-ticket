@@ -28,4 +28,8 @@
         "grunt-nodemon": "^0.4.1",
         "jshint": "^2.9.1"
     },
+
+    "devDependencies": {
+
+    }
 }
