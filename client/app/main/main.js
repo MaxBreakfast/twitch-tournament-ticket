@@ -54,7 +54,7 @@ main.controller('mainCtrl', function($scope, $http, apiService, $document) {
         apiService.apiSelect(game).success(function(data) {
             for (var i = 0; i < 4; i++) {
                 var ind = '#' + i;
-                $(ind).attr('src', "http://www.twitch.tv/" + data['streams'][i]['channel']['name'] + '/embed');
+                $(ind).attr('src', "https://www.twitch.tv/" + data['streams'][i]['channel']['name'] + '/embed');
             }
         }).catch(function(err) {
             console.error(err);
