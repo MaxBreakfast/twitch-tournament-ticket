@@ -54,8 +54,14 @@ main.controller('mainCtrl', function($scope, $http, apiService, $document) {
         apiService.apiSelect(game).success(function(data) {
             for (var i = 0; i < 4; i++) {
                 var ind = '#' + i;
-                $(ind).attr('src', "https://www.twitch.tv/" + data['streams'][i]['channel']['name'] + '/embed');
+                if (i === 0) {
+                    $(ind).attr('src', "http://player.twitch.tv/?channel=" + data['streams'][i]['channel']['name'] + "&!muted");
+                } else {
+
+                    $(ind).attr('src', "http://player.twitch.tv/?channel=" + data['streams'][i]['channel']['name'] + "&muted");
+                }
             }
+
         }).catch(function(err) {
             console.error(err);
         });
