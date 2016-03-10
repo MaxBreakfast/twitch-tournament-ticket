@@ -9,7 +9,7 @@
     "main": "server/server.js",
     "scripts": {
         "start": "node server/server.js",
-        "postinstall": "bower install && grunt build"
+        "postinstall": "bower install && npm install -g grunt-cli && grunt build"
     },
     "repository": {
         "type": "git",
