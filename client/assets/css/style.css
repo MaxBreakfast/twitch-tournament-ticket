@@ -6,20 +6,16 @@ html {
 body {
     height: auto;
     width: auto;
+    background-color: #F1F1F1;
 }
 
 #header {
     color: #6441A5;
-    background-color: white;
 }
 
-#header-image {
+.footer-image {
     height: 40px;
     width: 40px;
-}
-
-#heads-up {
-    display: inline;
 }
 
 .overlay-content {
@@ -32,20 +28,14 @@ body {
 .result-container {
     position: relative;
     background-color: white;
-    border-bottom: 1px solid #343447;
-    display: block;
+    border: 1px solid #343447;
+    display: inline-flex;
     min-height: 80px;
+    float: left;
 }
 
-.result-container .small-artwork {
-    left: 40px;
-    width: 40px;
-    height: 60px;
-}
-
-.result-container .result-info {
-    left: 100px;
-    width: 50%;
+.result-container:hover {
+    background-color: #F1F1F1
 }
 
 .result-container .add-button {
@@ -65,21 +55,48 @@ body {
     font-family: "Montserrat Black";
 }
 
+.result-container .small-artwork {
+    left: 40px;
+    width: 40px;
+    height: 60px;
+    display: inline-block;
+}
+
+.result-container .result-info {
+    left: 100px;
+    width: 50%;
+    display: inline-block;
+}
+
 #main-view {
     height: 100%;
     width: 100%;
     position: relative;
 }
 
-.vids-container= {
-    height: auto;
+.search-form {
+    margin-top: 5px;
+    margin-bottom: 15px
+}
+
+.full-view {
+    width: auto;
+}
+
+.vid-view {
+    width: auto;
+    background-color: #262626;
+}
+
+.vids-container {
     width: auto;
     padding: 0 0 0 0;
 }
 
 .vids {
-    height: 80%;
+    height: 400px;
     width: 49%;
+    display: inline-block;
 }
 
 
@@ -97,9 +114,14 @@ body {
 /* Set the fixed height of the footer here */
 
 #footer {
-    margin-top: 280px];
     height: 60px;
-    background-color: #f5f5f5;
+    background-color: #F1F1F1;
+}
+
+span a {
+    float: right;
+    margin: 0 auto;
+    padding: 5px 10px
 }
 
 

@@ -1,7 +1,9 @@
 var main = angular.module('ticket.main', ['ticket.services']);
 
 
-main.controller('mainCtrl', function($scope, $http, apiService) {
+
+main.controller('mainCtrl', function($scope, $http, apiService, $document) {
+
     $scope.results = null;
     $scope.games;
     $scope.searchData = function(q) {
@@ -12,23 +14,23 @@ main.controller('mainCtrl', function($scope, $http, apiService) {
             return;
         }
         apiService.apiSearch(q).success(function(data) {
-                $scope.games = data.channels;
-                $scope.games.forEach(function(ind){
-                   var icon = ind.game;
-                   icon = icon.split(' ');
-                   icon = icon.join('%20');
-                   icon+='-272x380.jpg';
-                   ind.ico = icon; 
+            console.log(data.channels);
+                var info =  data.channels;
+                info.filter(function(ind){
+                    return !!ind.game;
+                }).forEach(function(ind) {
+                    var icon = ind.game;
+                    icon = icon.split(' ');
+                    icon = icon.join('%20');
+                    icon += '-272x380.jpg';
+                    ind.ico = icon;
                 });
-                console.log($scope.games);
+            $scope.games = info;
             })
             .catch(function(err) {
                 console.error(err);
             });
         // pass the $http to the factory
-    };
-    $scope.mute = function() {
-        $('#1').mute();
     };
 
     $scope.clearData = function() {
@@ -44,13 +46,15 @@ main.controller('mainCtrl', function($scope, $http, apiService) {
         game = game.join('%20');
         console.log(game);
         apiService.apiSelect(game).success(function(data) {
-            console.log(data['streams'][0]['channel']['name']);
-            $('#0').attr('src', "http://www.twitch.tv/" + data['streams'][0]['channel']['name'] + '/embed');
-            $('#1').attr('src', "http://www.twitch.tv/" + data['streams'][1]['channel']['name'] + '/embed');
-            $('#2').attr('src', "http://www.twitch.tv/" + data['streams'][2]['channel']['name'] + '/embed');
-            $('#3').attr('src', "http://www.twitch.tv/" + data['streams'][3]['channel']['name'] + '/embed');
+            for (var i = 0; i < 4; i++) {
+                var ind = '#'+i;
+                $(ind).attr('src', "http://www.twitch.tv/" + data['streams'][i]['channel']['name'] + '/embed');
+            }
         }).catch(function(err) {
             console.error(err);
         });
     };
+    $document.ready(function(){
+        $scope.getData('bloodborne');
+    });
 });

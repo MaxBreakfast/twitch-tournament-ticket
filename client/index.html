@@ -10,37 +10,27 @@
     <link rel="stylesheet" type="text/css" href="./lib/bootstrap/dist/css/bootstrap.css">
     <script type="text/javascript" src="./lib/bootstrap/dist/js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    
 </head>
 
 <body>
-    <!--     <div id="wrap" class="container">
-        <div class='page-header text-center'>
-            <img id='header-image' src="./assets/images/GlitchIcon_PurpleonWhite.png">
-            <h1 id='header'>Twitch Tournament Ticket</h1>
-        </div>
-        <div ui-view>
-        </div>
-        <div id="footer">
-        <div class="container">
-          <p class="muted credit">footer</p>
-        </div>
-
-        </div>
-    </div> -->
-    <!-- Part 1: Wrap all page content here -->
     <div id="wrap">
-        <!-- Begin page content -->
-        <div class="container">
-            <div class="page-header text-center">
+        <div class="container full-view ">
+            <div class="page-header text-center header">
                 <h1 id="header">Twitch Tournament Ticket</h1>
             </div>
-            <div ui-view class='centered'>
+            <div ui-view class='centered vid-view'>
             </div>
         </div>
         <div id="footer">
-            <div class="container">
-                <p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
-            </div>
+            <span class="centered">
+            <a href="https://github.com/MaxBreakfast/twitch-tournament-ticket">
+                <img class='footer-image' src="./assets/images/GitHub-Mark-64px.png">
+            </a>
+            <a href='https://www.twitch.tv/'>
+                <img class='footer-image' src="./assets/images/GlitchIcon_purple.png">
+            </a>
+        </span>
         </div>
     </div>
 </body>
