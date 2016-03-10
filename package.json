@@ -1,34 +1,31 @@
 {
-  "name": "twitch-tournament-ticket",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server/server.js",
-  "scripts": {
-    "start": "node server/server.js",
-    "postinstall": "bower install && grunt build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MaxBreakfast/twitch-tournament-ticket.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MaxBreakfast/twitch-tournament-ticket/issues"
-  },
-  "homepage": "https://github.com/MaxBreakfast/twitch-tournament-ticket#readme",
-  "dependencies": {
-    "express": "^4.13.4"
-  },
-
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "bower": "^1.4.1",
-    "grunt-contrib-concat": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.0",
-    "grunt-contrib-uglify": "^1.0.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-nodemon": "^0.4.1",
-    "jshint": "^2.9.1"
-  }
+    "name": "twitch-tournament-ticket",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server/server.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "postinstall": "bower install && grunt build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MaxBreakfast/twitch-tournament-ticket.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/MaxBreakfast/twitch-tournament-ticket/issues"
+    },
+    "homepage": "https://github.com/MaxBreakfast/twitch-tournament-ticket#readme",
+    "dependencies": {
+        "express": "^4.13.4"
+        "grunt": "^0.4.5",
+        "bower": "^1.4.1",
+        "grunt-contrib-concat": "^1.0.0",
+        "grunt-contrib-cssmin": "^1.0.0",
+        "grunt-contrib-uglify": "^1.0.0",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-nodemon": "^0.4.1",
+        "jshint": "^2.9.1"
+    },
 }
