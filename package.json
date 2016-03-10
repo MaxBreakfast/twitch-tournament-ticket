@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "postinstall": "bash ./post_install.sh"
+    "postinstall": "bower install && grunt build"
   },
   "repository": {
     "type": "git",
