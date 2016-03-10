@@ -18,7 +18,7 @@
     },
     "homepage": "https://github.com/MaxBreakfast/twitch-tournament-ticket#readme",
     "dependencies": {
-        "express": "^4.13.4"
+        "express": "^4.13.4",
         "grunt": "^0.4.5",
         "bower": "^1.4.1",
         "grunt-contrib-concat": "^1.0.0",
