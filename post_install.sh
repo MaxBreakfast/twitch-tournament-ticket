@@ -1,4 +1,5 @@
 #!/bin/bash
+npm install -g bower
+npm install -g grunt-cli
 bower install
-./node_modules/grunt-cli/bin/grunt 
 grunt build
