@@ -55,10 +55,10 @@ main.controller('mainCtrl', function($scope, $http, apiService, $document) {
             for (var i = 0; i < 4; i++) {
                 var ind = '#' + i;
                 if (i === 0) {
-                    $(ind).attr('src', "http://player.twitch.tv/?channel=" + data['streams'][i]['channel']['name'] + "&!muted");
+                    $(ind).attr('src', "https://player.twitch.tv/?channel=" + data['streams'][i]['channel']['name'] + "&!muted");
                 } else {
 
-                    $(ind).attr('src', "http://player.twitch.tv/?channel=" + data['streams'][i]['channel']['name'] + "&muted");
+                    $(ind).attr('src', "https://player.twitch.tv/?channel=" + data['streams'][i]['channel']['name'] + "&muted");
                 }
             }
 
